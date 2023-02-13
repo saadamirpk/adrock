@@ -27,7 +27,7 @@ const Base = () => {
         if (res.status !== 404) {
           return res.json();
         }
-        setReportData(null);
+        return setReportData(null);
       })
       .then((data) => {
         if (typeof data !== 'undefined') {
