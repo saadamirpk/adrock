@@ -12,11 +12,11 @@ const TaxAssessments = (props: any) => {
     return propertyNames.map((item: any, ind: number) => {
       return (
         <tr key={item}>
-          <td scope="row" data-label="Account">
+          <td scope="row" data-label="Tax Assessment">
             Tax Assessment {item}
           </td>
-          <td data-label="Amount">{`Value: $${propertyValues[ind]?.value}`}</td>
-          <td data-label="Period">
+          <td data-label="Data">{`Value: $${propertyValues[ind]?.value}`}</td>
+          <td data-label="Other">
             {`Improvements: $${propertyValues[ind]?.improvements}`}
             <br />
             {`Land: $${propertyValues[ind]?.land}`}
@@ -35,11 +35,11 @@ const PropertyTaxes = (props: any) => {
     return propertyNames.map((item: any, ind: number) => {
       return (
         <tr key={item}>
-          <td scope="row" data-label="Account">
+          <td scope="row" data-label="Property Tax">
             Property Tax {item}
           </td>
-          <td data-label="Amount">${propertyValues[ind]?.total}</td>
-          <td data-label="Period">-</td>
+          <td data-label="Data">${propertyValues[ind]?.total}</td>
+          <td data-label="Other">-</td>
         </tr>
       );
     });
@@ -59,37 +59,37 @@ const Table = (props: any) => {
       </thead>
       <tbody>
         <tr>
-          <td data-label="Account">Year Built</td>
-          <td data-label="Amount">{props.data.yearBuilt}</td>
-          <td data-label="Period">-</td>
+          <td data-label="Year Built">Year Built</td>
+          <td data-label="Data">{props.data.yearBuilt}</td>
+          <td data-label="Other">-</td>
         </tr>
         <tr>
-          <td scope="row" data-label="Account">
+          <td scope="row" data-label="SquareFoot">
             SquareFoot
           </td>
-          <td data-label="Amount">{props.data.squareFootage}</td>
-          <td data-label="Period">-</td>
+          <td data-label="Data">{props.data.squareFootage}</td>
+          <td data-label="Other">-</td>
         </tr>
         <tr>
-          <td scope="row" data-label="Account">
+          <td scope="row" data-label="Bathrooms">
             Bathrooms
           </td>
-          <td data-label="Amount">{props.data.bathrooms}</td>
-          <td data-label="Period">-</td>
+          <td data-label="Data">{props.data.bathrooms}</td>
+          <td data-label="Other">-</td>
         </tr>
         <tr>
-          <td scope="row" data-label="Account">
+          <td scope="row" data-label="Bedrooms">
             Bedrooms
           </td>
-          <td data-label="Amount">{props.data.bedrooms}</td>
-          <td data-label="Period">-</td>
+          <td data-label="Data">{props.data.bedrooms}</td>
+          <td data-label="Other">-</td>
         </tr>
         <tr>
-          <td scope="row" data-label="Account">
+          <td scope="row" data-label="ZipCode">
             ZipCode
           </td>
-          <td data-label="Amount">{props.data.zipCode}</td>
-          <td data-label="Period">-</td>
+          <td data-label="Data">{props.data.zipCode}</td>
+          <td data-label="Other">-</td>
         </tr>
         {<PropertyTaxes data={props.data.propertyTaxes} />}
         {<TaxAssessments data={props.data.taxAssessment} />}
