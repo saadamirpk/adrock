@@ -32,7 +32,6 @@ const Base = () => {
       .then((data) => {
         if (typeof data !== 'undefined') {
           setReportData(data[0]);
-          console.log(data[0]);
         }
       });
   }, [fetchAddress]);

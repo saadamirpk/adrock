@@ -6,11 +6,10 @@ type ReportProps = {
 };
 
 const TaxAssessments = (props: any) => {
-  const propertyNames = Object.keys(props.data);
-  const propertyValues = Object.values(props.data);
-  console.log(propertyValues);
+  const propertyNames: any = Object.keys(props.data);
+  const propertyValues: any = Object.values(props.data);
   const getArray = () => {
-    return propertyNames.map((item, ind) => {
+    return propertyNames.map((item: any, ind: number) => {
       return (
         <tr key={item}>
           <td scope="row" data-label="Account">
@@ -30,11 +29,10 @@ const TaxAssessments = (props: any) => {
 };
 
 const PropertyTaxes = (props: any) => {
-  const propertyNames = Object.keys(props.data);
-  const propertyValues = Object.values(props.data);
-  console.log(propertyValues);
+  const propertyNames: any = Object.keys(props.data);
+  const propertyValues: any = Object.values(props.data);
   const getArray = () => {
-    return propertyNames.map((item, ind) => {
+    return propertyNames.map((item: any, ind: number) => {
       return (
         <tr key={item}>
           <td scope="row" data-label="Account">
