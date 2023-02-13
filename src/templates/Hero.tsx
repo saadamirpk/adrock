@@ -36,8 +36,8 @@ const Hero = (props: HeroProps) => {
           getRequiredAddress={props.getRequiredAddress}
           title={
             <>
-              {'Discover the True Value of Your Property\n'}
-              <span className="text-primary-500">Tax Assessment Tool</span>
+              {'Claim your cash or seller finance\n'}
+              <span className="text-primary-500">Offer From Adrock</span>
             </>
           }
           placeholder="Simply enter your property address and get an instant, accurate report."

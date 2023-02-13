@@ -13,19 +13,31 @@ const TaxAssessments = (props: any) => {
   const getArray = () => {
     return propertyNames.map((item: any, ind: number) => {
       return (
+        <>
+          {ind === propertyNames.length - 1 ? (
+            <div className="text-md md:text-3xl text-center">
+              <h2>{`Est. Seller Finance: $${(
+                propertyValues[ind]?.value * 1.1
+              ).toFixed(0)}`}</h2>
+              <br />
+              <h2>{`Est. Cash Offer: $${(
+                propertyValues[ind]?.value * 0.6
+              ).toFixed(0)}`}</h2>
+            </div>
+          ) : (
+            <></>
+          )}
+        </>
+        /*
         <tr key={item}>
           <td scope="row" data-label="Tax Assessment">
             Tax Assessment {item}
           </td>
           {ind === propertyNames.length - 1 ? (
             <td data-label="Data">
-              {`Est. Seller Finance: $${(
-                propertyValues[ind]?.value * 1.1
-              ).toFixed(0)}`}
+              
               <br />
-              {`Est. Cash Offer: $${(propertyValues[ind]?.value * 0.6).toFixed(
-                0
-              )}`}
+              
             </td>
           ) : (
             <td data-label="Data">{`Value: $${propertyValues[ind]?.value}`}</td>
@@ -37,12 +49,14 @@ const TaxAssessments = (props: any) => {
             {`Land: $${propertyValues[ind]?.land}`}
           </td>
         </tr>
+        */
       );
     });
   };
   return <>{getArray()}</>;
 };
 
+/*
 const PropertyTaxes = (props: any) => {
   const propertyNames: any = Object.keys(props.data);
   const propertyValues: any = Object.values(props.data);
@@ -61,65 +75,17 @@ const PropertyTaxes = (props: any) => {
   };
   return <>{getArray()}</>;
 };
+*/
 
 const Table = (props: any) => {
-  return (
-    <table>
-      <thead>
-        <tr>
-          <th scope="col">Feature</th>
-          <th scope="col">Data</th>
-          <th scope="col">Other</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td data-label="Year Built">Year Built</td>
-          <td data-label="Data">{props.data.yearBuilt}</td>
-          <td data-label="Other">-</td>
-        </tr>
-        <tr>
-          <td scope="row" data-label="SquareFoot">
-            SquareFoot
-          </td>
-          <td data-label="Data">{props.data.squareFootage}</td>
-          <td data-label="Other">-</td>
-        </tr>
-        <tr>
-          <td scope="row" data-label="Bathrooms">
-            Bathrooms
-          </td>
-          <td data-label="Data">{props.data.bathrooms}</td>
-          <td data-label="Other">-</td>
-        </tr>
-        <tr>
-          <td scope="row" data-label="Bedrooms">
-            Bedrooms
-          </td>
-          <td data-label="Data">{props.data.bedrooms}</td>
-          <td data-label="Other">-</td>
-        </tr>
-        <tr>
-          <td scope="row" data-label="ZipCode">
-            ZipCode
-          </td>
-          <td data-label="Data">{props.data.zipCode}</td>
-          <td data-label="Other">-</td>
-        </tr>
-        {<PropertyTaxes data={props.data.propertyTaxes} />}
-        {<TaxAssessments data={props.data.taxAssessment} />}
-      </tbody>
-    </table>
-  );
+  return <>{<TaxAssessments data={props.data.taxAssessment} />}</>;
 };
 
 const VerticalFeatures = (props: ReportProps) => (
   <Section
-    title="Your Report"
+    title="Your Result"
     description={
-      props.reportData?.id
-        ? `${props.reportData?.id}`
-        : 'enter the correct address above for report!'
+      props.reportData?.id ? '' : 'enter the correct address above for offer!'
     }
   >
     {props.reportData?.id && <Table data={props.reportData} />}

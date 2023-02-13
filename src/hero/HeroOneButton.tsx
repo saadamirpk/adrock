@@ -59,7 +59,7 @@ const HeroOneButton = (props: IHeroOneButtonProps) => {
             }
           }}
         >
-          <Button xl>Get Started Now</Button>
+          <Button xl>Claim Offer</Button>
         </a>
       </Link>
     </header>
