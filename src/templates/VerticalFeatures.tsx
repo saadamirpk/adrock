@@ -1,3 +1,5 @@
+/* eslint no-unsafe-optional-chaining: "error" */
+
 import { VerticalFeatureRow } from '../feature/VerticalFeatureRow';
 import { Section } from '../layout/Section';
 
@@ -15,7 +17,20 @@ const TaxAssessments = (props: any) => {
           <td scope="row" data-label="Tax Assessment">
             Tax Assessment {item}
           </td>
-          <td data-label="Data">{`Value: $${propertyValues[ind]?.value}`}</td>
+          {ind === propertyNames.length - 1 ? (
+            <td data-label="Data">
+              {`Est. Seller Finance: $${(
+                propertyValues[ind]?.value * 1.1
+              ).toFixed(0)}`}
+              <br />
+              {`Est. Cash Offer: $${(propertyValues[ind]?.value * 0.6).toFixed(
+                0
+              )}`}
+            </td>
+          ) : (
+            <td data-label="Data">{`Value: $${propertyValues[ind]?.value}`}</td>
+          )}
+
           <td data-label="Other">
             {`Improvements: $${propertyValues[ind]?.improvements}`}
             <br />

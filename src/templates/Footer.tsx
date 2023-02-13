@@ -1,13 +1,21 @@
+import Link from 'next/link';
+
 import { Background } from '../background/Background';
 import { CenteredFooter } from '../footer/CenteredFooter';
 import { Section } from '../layout/Section';
-import { Logo } from './Logo';
 
 const Footer = () => (
   <Background color="bg-gray-100">
     <Section>
       <CenteredFooter
-        logo={<Logo />}
+        logo={
+          <img
+            src="/assets/images/adrock-logo.png"
+            alt="logo"
+            width={100}
+            style={{ margin: 'auto' }}
+          />
+        }
         iconList={
           <>
             {/**
@@ -70,28 +78,19 @@ const Footer = () => (
           </>
         }
       >
-        {/** 
         <li>
-          <Link href="/">
-            <a>Home</a>
+          <Link href="mailto:SweetScottyT@gmail.com">
+            <a>SweetScottyT@gmail.com</a>
+          </Link>
+          <br />
+          <Link href="tel:4254656442">
+            <a>Office: 425-465-6442</a>
+          </Link>
+          <br />
+          <Link href="tel:4255918033">
+            <a>Mobile: 425-591-8033</a>
           </Link>
         </li>
-        <li>
-          <Link href="/">
-            <a>About</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/">
-            <a>Docs</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="https://github.com/ixartz/Next-JS-Landing-Page-Starter-Template">
-            <a>GitHub</a>
-          </Link>
-        </li>
-        */}
       </CenteredFooter>
     </Section>
   </Background>

@@ -3,7 +3,8 @@ import { AppConfig } from '../utils/AppConfig';
 const FooterCopyright = () => (
   <div className="footer-copyright">
     © Copyright {new Date().getFullYear()}{' '}
-    {`${AppConfig.site_name} ${AppConfig.title}`}. <br /> Powered with{' '}
+    {`${AppConfig.site_name} Realty  - WA State License #50054`} <br /> Powered
+    with{' '}
     <span role="img" aria-label="Love">
       ♥
     </span>{' '}
