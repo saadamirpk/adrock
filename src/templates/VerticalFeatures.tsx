@@ -11,11 +11,12 @@ const TaxAssessments = (props: any) => {
   const propertyNames: any = Object.keys(props.data);
   const propertyValues: any = Object.values(props.data);
   const getArray = () => {
+    // eslint-disable-next-line
     return propertyNames.map((item: any, ind: number) => {
       return (
         <>
           {ind === propertyNames.length - 1 ? (
-            <div className="text-md md:text-3xl text-center">
+            <div className={`text-md md:text-3xl text-center ${item}`}>
               <h2>{`Est. Seller Finance: $${(
                 propertyValues[ind]?.value * 1.1
               ).toFixed(0)}`}</h2>

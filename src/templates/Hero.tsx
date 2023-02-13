@@ -15,7 +15,12 @@ const Hero = (props: HeroProps) => {
       <Section yPadding="py-6">
         <NavbarTwoColumns
           logo={
-            <img src="/assets/images/adrock-logo.png" alt="logo" width={100} />
+            <img
+              id="tool"
+              src="/assets/images/adrock-logo.png"
+              alt="logo"
+              width={100}
+            />
           }
         >
           <li>
