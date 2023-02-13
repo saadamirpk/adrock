@@ -15,15 +15,18 @@ const HeroOneButton = (props: IHeroOneButtonProps) => {
 
   return (
     <header className="text-center">
-      <h1 className="text-5xl text-gray-900 font-bold whitespace-pre-line leading-hero">
+      <h1 className="text-3xl md:text-5xl text-gray-900 font-bold whitespace-pre-line leading-hero">
         {props.title}
       </h1>
       <input
-        className="text-2xl mt-8 mb-16 w-[80%] h-[45px] text-center outline-red-500"
+        className="text-sm md:text-2xl mt-8 mb-8 w-[90%] md:w-[80%] h-[45px] text-center outline-red-500"
         placeholder={props.placeholder}
         value={address}
         onChange={(e) => setAddress(e.target.value)}
       />
+      <p className="text-xs md:text-sm mb-16 opacity-50">
+        example 5500 Grand Lake Dr, San Antonio, TX, 78244
+      </p>
       <Link href={address.length > 0 ? '#report' : '#'}>
         <a
           onClick={() => {

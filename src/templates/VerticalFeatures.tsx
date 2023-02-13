@@ -5,15 +5,111 @@ type ReportProps = {
   reportData: any;
 };
 
+const TaxAssessments = (props: any) => {
+  const propertyNames = Object.keys(props.data);
+  const propertyValues = Object.values(props.data);
+  console.log(propertyValues);
+  const getArray = () => {
+    return propertyNames.map((item, ind) => {
+      return (
+        <tr key={item}>
+          <td scope="row" data-label="Account">
+            Tax Assessment {item}
+          </td>
+          <td data-label="Amount">{`Value: $${propertyValues[ind]?.value}`}</td>
+          <td data-label="Period">
+            {`Improvements: $${propertyValues[ind]?.improvements}`}
+            <br />
+            {`Land: $${propertyValues[ind]?.land}`}
+          </td>
+        </tr>
+      );
+    });
+  };
+  return <>{getArray()}</>;
+};
+
+const PropertyTaxes = (props: any) => {
+  const propertyNames = Object.keys(props.data);
+  const propertyValues = Object.values(props.data);
+  console.log(propertyValues);
+  const getArray = () => {
+    return propertyNames.map((item, ind) => {
+      return (
+        <tr key={item}>
+          <td scope="row" data-label="Account">
+            Property Tax {item}
+          </td>
+          <td data-label="Amount">${propertyValues[ind]?.total}</td>
+          <td data-label="Period">-</td>
+        </tr>
+      );
+    });
+  };
+  return <>{getArray()}</>;
+};
+
+const Table = (props: any) => {
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Feature</th>
+          <th scope="col">Data</th>
+          <th scope="col">Other</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Account">Year Built</td>
+          <td data-label="Amount">{props.data.yearBuilt}</td>
+          <td data-label="Period">-</td>
+        </tr>
+        <tr>
+          <td scope="row" data-label="Account">
+            SquareFoot
+          </td>
+          <td data-label="Amount">{props.data.squareFootage}</td>
+          <td data-label="Period">-</td>
+        </tr>
+        <tr>
+          <td scope="row" data-label="Account">
+            Bathrooms
+          </td>
+          <td data-label="Amount">{props.data.bathrooms}</td>
+          <td data-label="Period">-</td>
+        </tr>
+        <tr>
+          <td scope="row" data-label="Account">
+            Bedrooms
+          </td>
+          <td data-label="Amount">{props.data.bedrooms}</td>
+          <td data-label="Period">-</td>
+        </tr>
+        <tr>
+          <td scope="row" data-label="Account">
+            ZipCode
+          </td>
+          <td data-label="Amount">{props.data.zipCode}</td>
+          <td data-label="Period">-</td>
+        </tr>
+        {<PropertyTaxes data={props.data.propertyTaxes} />}
+        {<TaxAssessments data={props.data.taxAssessment} />}
+      </tbody>
+    </table>
+  );
+};
+
 const VerticalFeatures = (props: ReportProps) => (
   <Section
     title="Your Report"
     description={
       props.reportData?.id
-        ? `DATA FETCHED => ${props.reportData?.id}`
-        : 'Not Found'
+        ? `${props.reportData?.id}`
+        : 'enter the correct address above for report!'
     }
   >
+    {props.reportData?.id && <Table data={props.reportData} />}
     <VerticalFeatureRow
       title="Address Lookup"
       description="The tool allows users to enter an address and retrieve information about the property. This is a crucial feature as it enables the user to access the specific information they need without having to go through a complicated search process. After entering the address, the tool should be able to accurately locate the property and provide the relevant information."
