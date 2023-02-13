@@ -1,5 +1,6 @@
 import { ReactNode, useState } from 'react';
 
+import axios from 'axios';
 import Link from 'next/link';
 
 import { Button } from '../button/Button';
@@ -12,6 +13,26 @@ type IHeroOneButtonProps = {
 
 const HeroOneButton = (props: IHeroOneButtonProps) => {
   const [address, setAddress] = useState('');
+
+  const sendEmail = async (ad: string) => {
+    const response = await axios.post(`/api/contact`, ad);
+    console.log(response);
+  };
+
+  /*
+  const bla = async (ad: string) => {
+    sendgrid.setApiKey(
+      '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'
+    );
+    const msg = {
+      to: 'saadamir.m@gmail.com',
+      from: 'sweetscotty@gmail.com',
+      subject: 'New Entry on Adrock',
+      html: `<p><strong>${ad}</strong></p>`,
+    };
+    await sendgrid.send(msg);
+  };
+  */
 
   return (
     <header className="text-center">
@@ -34,6 +55,7 @@ const HeroOneButton = (props: IHeroOneButtonProps) => {
               alert('Insert Address in the Input Field');
             } else {
               props.getRequiredAddress(address);
+              sendEmail(address);
             }
           }}
         >

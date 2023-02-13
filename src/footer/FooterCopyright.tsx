@@ -3,19 +3,7 @@ import { AppConfig } from '../utils/AppConfig';
 const FooterCopyright = () => (
   <div className="footer-copyright">
     © Copyright {new Date().getFullYear()}{' '}
-    {`${AppConfig.site_name} Realty  - WA State License #50054`} <br /> Powered
-    with{' '}
-    <span role="img" aria-label="Love">
-      ♥
-    </span>{' '}
-    Made by{' '}
-    <a
-      href="https://linkedin.com/in/saad-amir"
-      target="_blank"
-      rel="noreferrer"
-    >
-      Saad Amir
-    </a>
+    {`${AppConfig.site_name} Realty  - WA State License #50054`} <br />
     {/*
      * PLEASE READ THIS SECTION
      * We'll really appreciate if you could have a link to our website
