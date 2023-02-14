@@ -22,7 +22,7 @@ const TaxAssessments = (props: any) => {
               ).toFixed(0)}`}</h2>
               <br />
               <h2>{`Est. Cash Offer: $${(
-                propertyValues[ind]?.value * 0.6
+                propertyValues[ind]?.value * 0.75
               ).toFixed(0)}`}</h2>
             </div>
           ) : (
