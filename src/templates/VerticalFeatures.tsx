@@ -18,7 +18,7 @@ const TaxAssessments = (props: any) => {
           {ind === propertyNames.length - 1 ? (
             <div className={`text-md md:text-3xl text-center ${item}`}>
               <h2>{`Est. Seller Finance: $${(
-                propertyValues[ind]?.value * 1.1
+                propertyValues[ind]?.value * 1.25
               ).toFixed(0)}`}</h2>
               <br />
               <h2>{`Est. Cash Offer: $${(
