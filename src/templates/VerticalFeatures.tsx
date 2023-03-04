@@ -1,6 +1,5 @@
 /* eslint no-unsafe-optional-chaining: "error" */
 
-import { VerticalFeatureRow } from '../feature/VerticalFeatureRow';
 import { Section } from '../layout/Section';
 
 type ReportProps = {
@@ -16,14 +15,18 @@ const TaxAssessments = (props: any) => {
       return (
         <>
           {ind === propertyNames.length - 1 ? (
-            <div className={`text-md md:text-3xl text-center ${item}`}>
-              <h2>{`Est. Seller Finance: $${(
-                propertyValues[ind]?.value * 1.25
-              ).toFixed(0)}`}</h2>
+            <div className={`text-center ${item}`}>
+              <h2 className="text-3xl md:text-5xl">
+                Estimated Seller Finance:
+                <br />
+                {`$${(propertyValues[ind]?.value * 1.25).toFixed(0)}`}{' '}
+              </h2>
               <br />
-              <h2>{`Est. Cash Offer: $${(
-                propertyValues[ind]?.value * 0.75
-              ).toFixed(0)}`}</h2>
+              <h2 className="text-3xl md:text-5xl">
+                Estimated Cash Offer:
+                <br />
+                {`$${(propertyValues[ind]?.value * 0.75).toFixed(0)}`}
+              </h2>
             </div>
           ) : (
             <></>
@@ -90,6 +93,7 @@ const VerticalFeatures = (props: ReportProps) => (
     }
   >
     {props.reportData?.id && <Table data={props.reportData} />}
+    {/*
     <VerticalFeatureRow
       title="Address Lookup"
       description="The tool allows users to enter an address and retrieve information about the property. This is a crucial feature as it enables the user to access the specific information they need without having to go through a complicated search process. After entering the address, the tool should be able to accurately locate the property and provide the relevant information."
@@ -109,6 +113,7 @@ const VerticalFeatures = (props: ReportProps) => (
       image="/assets/images/feature3.png"
       imageAlt="Property Information"
     />
+    */}
   </Section>
 );
 
