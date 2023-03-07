@@ -45,7 +45,6 @@ const Hero = (props: HeroProps) => {
               <span className="text-primary-500">Offer From Adrock</span>
             </>
           }
-          placeholder="Simply enter your property address and get an instant, accurate report."
         />
       </Section>
     </Background>

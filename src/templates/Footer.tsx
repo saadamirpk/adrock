@@ -83,9 +83,6 @@ const Footer = () => (
             <a>SweetScottyT@gmail.com</a>
           </Link>
           <br />
-          <Link href="tel:4254656442">
-            <a>Office: 425-465-6442</a>
-          </Link>
           <br />
           <Link href="tel:4255918033">
             <a>Mobile: 425-591-8033</a>
