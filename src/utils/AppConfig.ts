@@ -1,6 +1,6 @@
 export const AppConfig = {
   site_name: 'Adrock',
-  title: 'Tax Assessment',
+  title: 'Adrock',
   description: 'Assess your property',
   locale: 'en',
 };

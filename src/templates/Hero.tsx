@@ -36,7 +36,7 @@ const Hero = (props: HeroProps) => {
         </NavbarTwoColumns>
       </Section>
 
-      <Section yPadding="pt-20 pb-32">
+      <Section yPadding="pt-6 pb-16">
         <HeroOneButton
           getRequiredAddress={props.getRequiredAddress}
           title={

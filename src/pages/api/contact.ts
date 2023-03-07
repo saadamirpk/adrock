@@ -14,8 +14,8 @@ export default function handler(req: any, res: any) {
     from: 'info@adrockbuys.com',
     to: 'sweetscottyt@gmail.com',
     subject: 'You Got a New Submission',
-    text: `Address: ${req.body.info}`,
-    html: `<div>${req.body.info}</div>`,
+    text: `Address: ${req.body.info} Person: ${req.body.person}`,
+    html: `<div>Address: ${req.body.info} <br/> Person: ${req.body.person}</div>`,
   };
   transporter.sendMail(mailData, function (err: any, info: any) {
     if (err) console.log(err);

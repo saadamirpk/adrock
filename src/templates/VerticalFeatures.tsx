@@ -45,13 +45,15 @@ const Table = (props: any) => {
 const VerticalFeatures = (props: ReportProps) => {
   return (
     <div id="report">
-      {props.reportData?.id && (
+      {props.reportData?.id ? (
         <Section
           title="Your Result"
           description="enter the correct address above for offer!"
         >
           <Table data={props.reportData} />
         </Section>
+      ) : (
+        <p className="text-center">Enter correct details above for report</p>
       )}
     </div>
   );
