@@ -36,12 +36,7 @@ const HeroOneButton = (props: IHeroOneButtonProps) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(d),
-    }).then((res) => {
-      console.log(res);
-      if (res.status !== 200) {
-        console.log('Email failed!');
-      }
-    });
+    }).then(() => {});
   };
 
   const addressisok = () => {
@@ -104,7 +99,7 @@ const HeroOneButton = (props: IHeroOneButtonProps) => {
       />
       <input
         className="text-sm md:text-2xl md:mt-2 mb-2 md:mb-8 w-[90%] md:w-[30%] h-[45px] text-center outline-red-500"
-        placeholder="Contact Num"
+        placeholder="Contact Number"
         value={cell}
         onChange={(e) => setCell(e.target.value)}
       />

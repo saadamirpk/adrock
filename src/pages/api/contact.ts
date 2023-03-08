@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer');
 export default function handler(req: any, res: any) {
   const transporter = nodemailer.createTransport({
     port: 465,
-    host: 'mail.adrockbuys.com',
+    host: 'server.adrockbuys.com',
     auth: {
       user: 'info@adrockbuys.com',
       pass: 'S4M]V9.&ta?;',
